@@ -11,10 +11,26 @@ class TextsViewModels {
   }
 
   String get role {
-    return constants.kRole;
+    return englishLang
+        ? constants.kEnDataInfo['role']!
+        : constants.kBrDataInfo['role']!;
   }
 
   String get description {
-    return constants.kDescription;
+    return englishLang
+        ? constants.kEnDataInfo['description']!
+        : constants.kBrDataInfo['description']!;
+  }
+
+  String get aboutMeTitle {
+    return englishLang
+        ? constants.kEnDataInfo['aboutMeTitle']!
+        : constants.kBrDataInfo['aboutMeTitle']!;
+  }
+
+  String get aboutMe {
+    return englishLang
+        ? constants.kEnDataInfo['aboutMe']!
+        : constants.kBrDataInfo['aboutMe']!;
   }
 }

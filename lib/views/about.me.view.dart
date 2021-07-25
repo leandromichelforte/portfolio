@@ -18,51 +18,51 @@ class AboutMeView extends StatefulWidget {
 class _AboutMeViewState extends State<AboutMeView> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Column(
+    return SingleChildScrollView(
+      child: Container(
+        height: widget.constraints.maxHeight * 1.2,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              widget.textViewModels.name,
-              style: GoogleFonts.inconsolata(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-              ),
+            Column(
+              children: [
+                Text(
+                  widget.textViewModels.name,
+                  style: GoogleFonts.inconsolata(
+                    fontSize: widget.constraints.maxHeight * .05,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  widget.textViewModels.role,
+                  style: GoogleFonts.inconsolata(
+                    fontSize: widget.constraints.maxHeight * .025,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "  ${widget.textViewModels.aboutMeTitle}",
+                  style: GoogleFonts.rajdhani(
+                    fontSize: widget.constraints.maxHeight * .05,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
             ),
             Text(
-              widget.textViewModels.role,
-              style: GoogleFonts.inconsolata(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black54,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            Text(
-              "  Meu portfolio",
+              "    ${widget.textViewModels.aboutMe}",
               style: GoogleFonts.rajdhani(
-                fontSize: 40,
-                fontWeight: FontWeight.w600,
+                fontSize: widget.constraints.maxHeight * .025,
               ),
             ),
           ],
         ),
-        Text(
-          "    App criado para mostrar o meu resumo profissional com a ferramenta que é minha principal stack, o Flutter.\n    Na barra lateral, você pode navegar entre cada seção para mais informações.",
-          style: GoogleFonts.rajdhani(
-            fontSize: 20,
-          ),
-        ),
-        ElevatedButton(
-          child: Text(
-              "Vamos lá?!\n${widget.constraints.maxHeight}\n${widget.constraints.maxWidth}"),
-          onPressed: () => null,
-        ),
-      ],
+      ),
     );
   }
 }

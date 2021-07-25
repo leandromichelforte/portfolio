@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/view-models/texts.viewmodels.dart';
 
 class ContactView extends StatefulWidget {
   final BoxConstraints constraints;
+  final TextsViewModels textViewModels;
   const ContactView({
     Key? key,
+    required this.textViewModels,
     required this.constraints,
   }) : super(key: key);
 

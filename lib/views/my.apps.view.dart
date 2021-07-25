@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view-models/texts.viewmodels.dart';
 
-class ExperienceView extends StatefulWidget {
+class MyApps extends StatefulWidget {
   final BoxConstraints constraints;
   final TextsViewModels textViewModels;
-  const ExperienceView({
+  const MyApps({
     Key? key,
     required this.constraints,
     required this.textViewModels,
   }) : super(key: key);
 
   @override
-  _ExperienceViewState createState() => _ExperienceViewState();
+  _MyAppsState createState() => _MyAppsState();
 }
 
-class _ExperienceViewState extends State<ExperienceView> {
+class _MyAppsState extends State<MyApps> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ElevatedButton(
-        child: Text(
-            "Tela 3\n${widget.constraints.maxHeight}\n${widget.constraints.maxWidth}"),
-        onPressed: () => null,
-      ),
+      child: Text(
+          "Tela 7\n${widget.constraints.maxHeight}\n${widget.constraints.maxWidth}"),
     );
   }
 }

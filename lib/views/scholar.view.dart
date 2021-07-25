@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/view-models/texts.viewmodels.dart';
 
 class ScholarView extends StatefulWidget {
   final BoxConstraints constraints;
+  final TextsViewModels textViewModels;
   const ScholarView({
     Key? key,
+    required this.textViewModels,
     required this.constraints,
   }) : super(key: key);
 
