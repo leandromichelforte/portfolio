@@ -33,4 +33,16 @@ class TextsViewModels {
         ? constants.kEnDataInfo['aboutMe']!
         : constants.kBrDataInfo['aboutMe']!;
   }
+
+  String get experienceTitle {
+    return englishLang
+        ? constants.kEnDataInfo['experienceTitle']!
+        : constants.kBrDataInfo['experienceTitle']!;
+  }
+
+  List get experience {
+    return englishLang
+        ? constants.kEnDataInfo['experience']!
+        : constants.kBrDataInfo['experience']!;
+  }
 }

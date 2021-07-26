@@ -24,33 +24,34 @@ class _AboutMeViewState extends State<AboutMeView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              children: [
-                Text(
-                  widget.textViewModels.name,
-                  style: GoogleFonts.inconsolata(
-                    fontSize: widget.constraints.maxHeight * .05,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  widget.textViewModels.role,
-                  style: GoogleFonts.inconsolata(
-                    fontSize: widget.constraints.maxHeight * .025,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
+            Text(
+              "  ${widget.textViewModels.aboutMeTitle}",
+              style: GoogleFonts.inconsolata(
+                fontSize: widget.constraints.maxHeight * .05,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  "  ${widget.textViewModels.aboutMeTitle}",
-                  style: GoogleFonts.rajdhani(
-                    fontSize: widget.constraints.maxHeight * .05,
-                    fontWeight: FontWeight.w600,
-                  ),
+                Column(
+                  children: [
+                    Text(
+                      widget.textViewModels.name,
+                      style: GoogleFonts.inconsolata(
+                        fontSize: widget.constraints.maxHeight * .05,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      widget.textViewModels.role,
+                      style: GoogleFonts.inconsolata(
+                        fontSize: widget.constraints.maxHeight * .025,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -30,10 +30,11 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                "  Meu portfolio",
-                style: GoogleFonts.rajdhani(
+                " Meu portfolio",
+                style: GoogleFonts.inconsolata(
                   fontSize: widget.constraints.maxHeight * .05,
                   fontWeight: FontWeight.w600,
                 ),
@@ -42,7 +43,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           Text(
             "    App criado para mostrar o meu resumo profissional com a ferramenta que é minha principal stack, o Flutter.\n    Na barra lateral, você pode navegar entre cada seção para mais informações.",
-            style: GoogleFonts.rajdhani(
+            style: TextStyle(
               fontSize: widget.constraints.maxHeight * .025,
             ),
           ),
