@@ -19,35 +19,38 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            "Bem-vindo :)",
-            style: GoogleFonts.inconsolata(
-              fontSize: widget.constraints.maxHeight * .05,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                " Meu portfolio",
-                style: GoogleFonts.inconsolata(
-                  fontSize: widget.constraints.maxHeight * .05,
-                  fontWeight: FontWeight.w600,
-                ),
+      child: Container(
+        height: widget.constraints.maxHeight * .4,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              "Bem-vindo :)",
+              style: GoogleFonts.inconsolata(
+                fontSize: widget.constraints.maxHeight * .05,
+                fontWeight: FontWeight.bold,
               ),
-            ],
-          ),
-          Text(
-            "    App criado para mostrar o meu resumo profissional com a ferramenta que é minha principal stack, o Flutter.\n    Na barra lateral, você pode navegar entre cada seção para mais informações.",
-            style: TextStyle(
-              fontSize: widget.constraints.maxHeight * .025,
             ),
-          ),
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  " Meu portfolio",
+                  style: GoogleFonts.inconsolata(
+                    fontSize: widget.constraints.maxHeight * .05,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "    App criado para mostrar o meu resumo profissional com a ferramenta que é minha principal stack, o Flutter.\n    Na barra lateral, você pode navegar entre cada seção para mais informações.",
+              style: TextStyle(
+                fontSize: widget.constraints.maxHeight * .025,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

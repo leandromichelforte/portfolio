@@ -17,57 +17,100 @@ class ExperienceView extends StatefulWidget {
 }
 
 class _ExperienceViewState extends State<ExperienceView> {
+  void _showExperienceDialog(Map<String, dynamic> experience) {
+    showDialog(
+        context: context,
+        builder: (dialogContext) {
+          return AlertDialog(
+            title: Column(
+              children: [
+                FittedBox(
+                  child: Text(
+                    "${experience['role']} - ${experience['company']}",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Text(
+                  "${experience['period']}",
+                  style: TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+            content: Container(
+              height: widget.constraints.maxHeight * .3,
+              width: widget.constraints.maxWidth,
+              child: ListView.builder(
+                  itemCount: experience['tasks'].length,
+                  itemBuilder: (_, index) {
+                    return ListTile(
+                      title: Text("- ${experience['tasks'][index]}"),
+                    );
+                  }),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(dialogContext).pop(),
+                child: Text(
+                  "Fechar",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        height: widget.constraints.maxHeight * 1.2,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              "  ${widget.textViewModels.aboutMeTitle}",
-              style: GoogleFonts.rajdhani(
-                fontSize: widget.constraints.maxHeight * .05,
-                fontWeight: FontWeight.w600,
-              ),
+    return Container(
+      height: widget.constraints.maxHeight,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            "  ${widget.textViewModels.experienceTitle}",
+            style: GoogleFonts.inconsolata(
+              fontSize: widget.constraints.maxHeight * .05,
+              fontWeight: FontWeight.w600,
             ),
-            Container(
-              height: 200,
-              width: 200,
-              child: Timeline.tileBuilder(
-                builder: TimelineTileBuilder.connected(
-                  itemCount: widget.textViewModels.experience.length,
-                  lastConnectorBuilder: (_) => Container(
-                    child: DecoratedLineConnector(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Colors.grey, Colors.grey[200]!],
-                        ),
+          ),
+          Container(
+            height: widget.constraints.maxHeight * .8,
+            width: widget.constraints.maxWidth,
+            child: Timeline.tileBuilder(
+              builder: TimelineTileBuilder.connected(
+                itemCount: widget.textViewModels.experience.length,
+                lastConnectorBuilder: (_) => Container(
+                  child: DecoratedLineConnector(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [Colors.grey, Colors.grey[200]!],
                       ),
                     ),
                   ),
-                  connectorBuilder: (_, index, __) => SolidLineConnector(
+                ),
+                connectorBuilder: (_, index, __) => Container(
+                  height: widget.constraints.maxHeight * .045,
+                  child: SolidLineConnector(
                     color: Colors.black45,
                   ),
-                  indicatorBuilder: (_, index) => DotIndicator(
-                    color: Colors.green,
-                  ),
-                  contentsBuilder: (_, index) => Container(
-                    padding: EdgeInsets.all(widget.constraints.maxHeight * .03),
-                    child: Text(
-                      "${index + 1}",
-                    ),
+                ),
+                indicatorBuilder: (_, index) => ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.black87)),
+                  onPressed: () => _showExperienceDialog(
+                      widget.textViewModels.experience[index]),
+                  child: Text(
+                    "${widget.textViewModels.experience[index]['role']}",
                   ),
                 ),
               ),
             ),
-            Text(
-                "${widget.constraints.maxHeight}\n${widget.constraints.maxWidth}")
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

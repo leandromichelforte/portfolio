@@ -18,14 +18,67 @@ class ConstantsModel {
     'experience': [
       <String, dynamic>{
         'company': 'Grupo R Carvalho',
-        'period': '',
-        'tasks': []
+        'role': 'Desenvolvedor',
+        'period': 'dezembro de 2020 - hoje',
+        'tasks': <String>[
+          'Desenvolvimento de sistemas web (Ruby on Rails, Django, React, PHP, Javascript, Html, CSS)',
+          'Desenvolvimento de aplicações móveis (Flutter, Java)',
+          'Publicação PlayStore',
+          'Consumo de APIs',
+          'Versionamento de código (Git)',
+          'Desenvolvimento em metodologia ágil (Scrum, Kanban)',
+          'Suporte e manutenção dos sistemas existentes',
+          'Análise e estudo para melhoria de rotinas',
+          'Criação de ferramentas de automação de processos internos',
+          'Restruturação de aplicações e/ou sistemas depreciados',
+          'Atendimento ao usuário (colaborador interno)',
+          'Suporte às atividades internas da empresa implementando melhorias',
+        ]
       },
       <String, dynamic>{
         'company': 'Grupo R Carvalho',
-        'period': '',
-        'tasks': []
-      }
+        'role': 'Estagiário',
+        'period': 'março de 2019 - dezembro de 2020',
+        'tasks': <String>[
+          'Monitoramento de servidores Windows e Linux',
+          'Configuração de ambiente para desenvolvimento de ferramentas',
+          'Estudo e criação de ferramentas para acelerar rotinas',
+          'Suporte aos usuários e setores',
+          'Suporte a links de comunicação',
+        ]
+      },
+      <String, dynamic>{
+        'company': 'Vikstar',
+        'role': 'Operador',
+        'period': 'maio de 2017 - março/2019',
+        'tasks': <String>[
+          'Atendimento e suporte ao cliente final',
+          'Tratamento técnico mais especializado e aprofundado',
+          'Auxílio na gerência e organização da equipe de back office',
+          'Criar e tratar os dados com finalidade de mensurar e acompanhar a produtividade do setor',
+        ]
+      },
+      <String, dynamic>{
+        'company': 'O Boticário',
+        'role': 'Vendedor',
+        'period': 'dezembro de 2016 - fevereiro 2017',
+        'tasks': <String>[
+          'Atendimento ao cliente final',
+          'Viagem às cidades da redondeza para apresentação e divulgação das novidades por meio de palestras',
+          'Criar e organizar eventos e palestras do produto',
+          'Responsável pela organização e fluxo continínuo do estoque',
+        ]
+      },
+      <String, dynamic>{
+        'company': 'O Boticário',
+        'role': 'Jovem Aprendiz',
+        'period': 'agosto de 2015 - agosto de 2016',
+        'tasks': <String>[
+          'Alinhar conceitos teóricos, aprendidos em sala de aula, a prática executados na loja',
+          'Atendimento ao cliente final',
+          'Responsável pela organização e fluxo continínuo do estoque',
+        ]
+      },
     ],
   };
   Map<String, String> kEnDataInfo = {
